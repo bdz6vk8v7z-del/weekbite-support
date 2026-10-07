@@ -3,8 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Dinner Ideas for iPhone: privacy policy and support.">
-<title>Dinner Ideas Privacy &amp; Support</title>
+<meta name="description" content="Dinner Ideas is a free iPhone app that plans 5 or 7 easy weeknight dinners in one tap and builds the grocery list, sorted by aisle. No account, no ads, works offline.">
+<meta name="apple-itunes-app" content="app-id=6815226972">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Dinner Ideas: Weekly Planner for iPhone">
+<meta property="og:description" content="One tap plans your weeknight dinners and builds the grocery list. Free, no account, no ads.">
+<meta property="og:url" content="https://bdz6vk8v7z-del.github.io/weekbite-support/">
+<meta property="og:image" content="https://bdz6vk8v7z-del.github.io/weekbite-support/assets/icon-512.png">
+<link rel="icon" href="assets/icon-180.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<title>Dinner Ideas: Weekly Planner — dinner planner &amp; grocery list for iPhone</title>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"MobileApplication","name":"Dinner Ideas: Weekly Planner","operatingSystem":"iOS 17.0 or later","applicationCategory":"LifestyleApplication","description":"Plans 5 or 7 easy weeknight dinners in one tap and builds the grocery list, sorted by aisle.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"downloadUrl":"https://apps.apple.com/app/id6815226972","author":{"@type":"Person","name":"Yonni Balustre"}}
+</script>
 <style>
 :root{
   --ground:#fbfaf8; --surface:#ffffff; --ink:#1f1b18; --muted:#6b635c; --line:#e7e1da;
@@ -24,12 +35,25 @@
 }
 body{background:var(--ground);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif;padding-inline:16px}
 .wrap{max-width:720px;margin:0 auto;padding-block:40px 64px}
-header{display:flex;align-items:center;gap:14px;margin-bottom:28px}
-.mark{width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,#f38a4f,#e0552e);display:grid;place-items:center;flex:none}
-.mark span{width:28px;height:28px;border-radius:50%;background:#fdf7f0;display:grid;place-items:center}
-.mark i{width:11px;height:7px;background:var(--leaf);border-radius:0 100% 0 100%;display:block;transform:rotate(-30deg)}
-h1{font:700 clamp(28px,6vw,38px)/1.1 ui-rounded,"SF Pro Rounded",system-ui,-apple-system,sans-serif;margin:0;text-wrap:balance}
-.sub{color:var(--muted);margin:2px 0 0}
+.hero{background:linear-gradient(165deg,#bf4a1c 0%,#a33c14 55%,#86300f 100%);color:#fff;border-radius:22px;padding:28px 24px 26px;margin-bottom:22px}
+.hero .icon{width:76px;height:76px;border-radius:17px;display:block;box-shadow:0 6px 18px rgba(50,16,4,.35)}
+.eyebrow{font:600 13px/1.2 system-ui,-apple-system,sans-serif;letter-spacing:.08em;text-transform:uppercase;margin:18px 0 8px}
+h1{font:700 clamp(32px,8vw,46px)/1.05 ui-rounded,"SF Pro Rounded",system-ui,-apple-system,sans-serif;margin:0;text-wrap:balance}
+.lede{font-size:19px;line-height:1.45;margin:12px 0 20px;max-width:36ch}
+.store{display:inline-block;background:#fff8f0;color:#5a2a14;font-weight:700;text-decoration:none;padding:13px 20px;border-radius:14px}
+.store:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.hero .note{display:block;margin-top:12px;font-size:14px}
+.features{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:16px}
+.features li{max-width:none}
+.features strong{display:block}
+.shots{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 12px;margin:22px -8px 0}
+.shots img{flex:0 0 64%;max-width:270px;height:auto;border-radius:18px;scroll-snap-align:center}
+@media (min-width:640px){
+  .hero{padding:40px 40px 38px}
+  .features{grid-template-columns:1fr 1fr;gap:18px 28px}
+  .shots{overflow:visible;margin-inline:0;padding-inline:0}
+  .shots img{flex:1 1 0;max-width:none;min-width:0}
+}
 nav{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}
 nav a{padding:6px 14px;border-radius:999px;background:var(--accent-soft);color:var(--accent);text-decoration:none;font-weight:600;font-size:14px}
 nav a:focus-visible,a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
@@ -50,19 +74,36 @@ footer{color:var(--muted);font-size:13px;text-align:center;margin-top:28px}
 <body>
 
 <div class="wrap">
-  <header>
-    <div class="mark" aria-hidden="true"><span><i></i></span></div>
-    <div>
-      <h1>Dinner Ideas</h1>
-      <p class="sub">Weeknight dinners, planned — and the shopping list that goes with them.</p>
-    </div>
+  <header class="hero">
+    <img class="icon" src="assets/icon-180.png" width="76" height="76" alt="">
+    <p class="eyebrow">iPhone app · Free · No account</p>
+    <h1>Dinner Ideas</h1>
+    <p class="lede">What’s for dinner this week? One tap plans 5 or 7 easy dinners and builds the grocery list that goes with them, sorted by aisle.</p>
+    <a class="store" href="https://apps.apple.com/app/id6815226972">Download on the App Store</a>
+    <span class="note">No ads, no tracking. Everything stays on your iPhone and works offline.</span>
   </header>
 
   <nav aria-label="Sections">
+    <a href="#app">What it does</a>
     <a href="#privacy">Privacy Policy</a>
     <a href="#support">Support</a>
     <a href="#fr">Français</a>
   </nav>
+
+  <section id="app">
+    <h2>Dinner, sorted for the week</h2>
+    <ul class="features">
+      <li><strong>A week of dinners in one tap</strong>Get 5 or 7 dinners with no repeats. Lock the ones you like, reshuffle the rest, or replace a single meal.</li>
+      <li><strong>One grocery list, sorted by aisle</strong>Quantities are added up for your servings and rounded to whole items. Deduct what is already in your pantry.</li>
+      <li><strong>150 simple weeknight recipes</strong>Skillet meals, sheet-pan dinners, pasta, soups, tacos and stir-fries, most ready in 45 minutes or less, with estimated calories per serving.</li>
+      <li><strong>Your filters, respected</strong>Servings, a time limit, vegetarian or vegan, excluded ingredients and allergens. The app never quietly loosens them.</li>
+    </ul>
+    <div class="shots" role="group" aria-label="Screenshots of Dinner Ideas on iPhone">
+      <img src="assets/shot-plan.jpg" width="600" height="1304" alt="My week screen: a Generate my week button above a planned dinner with its photo." loading="lazy" decoding="async">
+      <img src="assets/shot-shopping.jpg" width="600" height="1304" alt="Shopping list screen: ingredients grouped under the Produce aisle with checkboxes." loading="lazy" decoding="async">
+      <img src="assets/shot-recipe.jpg" width="600" height="1304" alt="Recipe screen: dish photo, cooking time, calories per serving and servings." loading="lazy" decoding="async">
+    </div>
+  </section>
 
   <section id="privacy">
     <h2>Privacy Policy</h2>
@@ -122,6 +163,7 @@ footer{color:var(--muted);font-size:13px;text-align:center;margin-top:28px}
 
   <section id="fr" lang="fr">
     <h2>En français</h2>
+    <p><strong>L’app :</strong> Dinner Ideas planifie vos dîners de la semaine en un geste (5 ou 7 jours) et prépare la liste de courses triée par rayon. 150 recettes simples, unités métriques en français, gratuite, sans compte ni publicité.</p>
     <p><strong>Confidentialité :</strong> Dinner Ideas ne collecte, ne transmet et ne vend aucune donnée personnelle. Pas de compte, de publicité, d'analyse ni de traceur. Votre planning, vos préférences, votre placard et vos favoris restent dans un fichier de l'app sur votre iPhone ; ils n'en sortent que si vous les partagez ou les exportez vous-même (ou via les sauvegardes de votre appareil). L'app n'effectue aucune requête réseau. Les filtres de régime et d'allergènes ne constituent pas un avis médical.</p>
     <p><strong>Assistance :</strong> écrivez à l'adresse ci-dessus.</p>
   </section>

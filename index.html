@@ -3,56 +3,82 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="TakeMyWeek is an iPhone app that sets up your week from your needs, plans your lunches and dinners in one tap and builds the grocery list, sorted by aisle. No account, no ads, your data stays on your iPhone.">
+<meta name="description" content="TakeMyWeek is an iPhone app that sets up your week from your needs: lunches and dinners, the grocery list sorted by aisle, goals and steps, and a cheer when you reach them. No account, no ads, your data stays on your iPhone.">
 <meta name="apple-itunes-app" content="app-id=6815226972">
+<meta name="theme-color" content="#FFE9C6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#211A16" media="(prefers-color-scheme: dark)">
 <meta property="og:type" content="website">
 <meta property="og:title" content="TakeMyWeek: Meal Planner for iPhone">
-<meta property="og:description" content="One tap plans your week of lunches and dinners and builds the grocery list. No account, no ads.">
+<meta property="og:description" content="A few questions and TakeMyWeek sets up your week: lunches and dinners, the grocery list sorted by aisle, and a cheer when you reach your goals. No account, no ads.">
 <meta property="og:url" content="https://bdz6vk8v7z-del.github.io/weekbite-support/">
-<meta property="og:image" content="https://bdz6vk8v7z-del.github.io/weekbite-support/assets/icon-512.png">
-<link rel="icon" href="assets/icon-180.png">
-<link rel="apple-touch-icon" href="assets/icon-180.png">
+<meta property="og:image" content="https://bdz6vk8v7z-del.github.io/weekbite-support/assets/icon-v22-512.png">
+<link rel="canonical" href="https://bdz6vk8v7z-del.github.io/weekbite-support/">
+<link rel="alternate" hreflang="en" href="https://bdz6vk8v7z-del.github.io/weekbite-support/">
+<link rel="alternate" hreflang="fr" href="https://bdz6vk8v7z-del.github.io/weekbite-support/fr/">
+<link rel="alternate" hreflang="x-default" href="https://bdz6vk8v7z-del.github.io/weekbite-support/">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icon-v22-32.png">
+<link rel="apple-touch-icon" href="assets/icon-v22-180.png">
 <title>TakeMyWeek: Meal Planner — lunch &amp; dinner planner, grocery list and goals for iPhone</title>
+<script>
+// French browsers get the French page, and "#fr" (the French privacy link of the App Store) always does.
+// A visitor who picks English keeps it (?lang=en, remembered on this device).
+(function(){
+  var h = location.hash, pref = null;
+  try {
+    if (new URLSearchParams(location.search).get('lang') === 'en') localStorage.setItem('tmw-lang', 'en');
+    pref = localStorage.getItem('tmw-lang');
+  } catch (e) {}
+  if (h === '#fr') { location.replace('fr/#confidentialite'); return; }
+  var first = ((navigator.languages && navigator.languages[0]) || navigator.language || '').toLowerCase();
+  var map = {'': '', '#app': '#app', '#privacy': '#confidentialite', '#terms': '#conditions', '#support': '#assistance'};
+  if (first.indexOf('fr') === 0 && pref !== 'en' && h in map) location.replace('fr/' + map[h]);
+})();
+</script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"MobileApplication","name":"TakeMyWeek: Meal Planner","operatingSystem":"iOS 17.0 or later","applicationCategory":"LifestyleApplication","description":"Plans your lunches and dinners in one tap and builds the grocery list, sorted by aisle.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"downloadUrl":"https://apps.apple.com/app/id6815226972","author":{"@type":"Person","name":"Yonni Balustre"}}
+{"@context":"https://schema.org","@type":"MobileApplication","name":"TakeMyWeek: Meal Planner","operatingSystem":"iOS 17.0 or later","applicationCategory":"LifestyleApplication","description":"Sets up your week from your needs: lunches and dinners, the grocery list sorted by aisle, goals and steps, with a cheer when you reach them.","image":"https://bdz6vk8v7z-del.github.io/weekbite-support/assets/icon-v22-512.png","inLanguage":["en","fr"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"downloadUrl":"https://apps.apple.com/app/id6815226972","author":{"@type":"Person","name":"Yonni Balustre"}}
 </script>
 <style>
+/* Colours of the app's "Solaire" theme: corn cream, espresso ink, tomato accent. */
 :root{
-  --ground:#fbfaf8; --surface:#ffffff; --ink:#1f1b18; --muted:#6b635c; --line:#e7e1da;
-  --accent:#c2410c; --accent-soft:#fdeee6; --leaf:#3f8f55;
+  --ground:#fff6e8; --surface:#fffdf9; --ink:#2e1a10; --muted:#6b4e3c; --line:#f0dfc6;
+  --accent:#b8350c; --accent-soft:#ffdfcb; --leaf:#3f6e15;
+  --hero-from:#ffe9c6; --hero-to:#ffdfcb; --hero-ink:#2e1a10; --hero-eyebrow:#a52d07;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
     color-scheme:dark;
-    --ground:#16130f; --surface:#201c17; --ink:#f3eee8; --muted:#b0a69c; --line:#352f28;
-    --accent:#f08a54; --accent-soft:#3a2418; --leaf:#6fc285;
+    --ground:#161210; --surface:#2a2220; --ink:#fff1dd; --muted:#d9c3ab; --line:#3d322c;
+    --accent:#ff8461; --accent-soft:#4e261b; --leaf:#aedd6e;
+    --hero-from:#2b211c; --hero-to:#211a16; --hero-ink:#fff1dd; --hero-eyebrow:#ffb496;
   }
 }
 :root[data-theme="dark"]{
   color-scheme:dark;
-  --ground:#16130f; --surface:#201c17; --ink:#f3eee8; --muted:#b0a69c; --line:#352f28;
-  --accent:#f08a54; --accent-soft:#3a2418; --leaf:#6fc285;
+  --ground:#161210; --surface:#2a2220; --ink:#fff1dd; --muted:#d9c3ab; --line:#3d322c;
+  --accent:#ff8461; --accent-soft:#4e261b; --leaf:#aedd6e;
+  --hero-from:#2b211c; --hero-to:#211a16; --hero-ink:#fff1dd; --hero-eyebrow:#ffb496;
 }
-body{background:var(--ground);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif;padding-inline:16px}
+body{background:var(--ground);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif;padding-inline:16px;margin:0}
 .wrap{max-width:720px;margin:0 auto;padding-block:40px 64px}
-.hero{background:linear-gradient(165deg,#bf4a1c 0%,#a33c14 55%,#86300f 100%);color:#fff;border-radius:22px;padding:28px 24px 26px;margin-bottom:22px}
-.hero .icon{width:76px;height:76px;border-radius:17px;display:block;box-shadow:0 6px 18px rgba(50,16,4,.35)}
-.eyebrow{font:600 13px/1.2 system-ui,-apple-system,sans-serif;letter-spacing:.08em;text-transform:uppercase;margin:18px 0 8px}
-h1{font:700 clamp(32px,8vw,46px)/1.05 ui-rounded,"SF Pro Rounded",system-ui,-apple-system,sans-serif;margin:0;text-wrap:balance}
-.lede{font-size:19px;line-height:1.45;margin:12px 0 20px;max-width:36ch}
-.store{display:inline-block;background:#fff8f0;color:#5a2a14;font-weight:700;text-decoration:none;padding:13px 20px;border-radius:14px}
-.store:focus-visible{outline:3px solid #fff;outline-offset:3px}
-.hero .note{display:block;margin-top:12px;font-size:14px}
+.hero{background:linear-gradient(165deg,var(--hero-from) 0%,var(--hero-to) 100%);color:var(--hero-ink);border-radius:22px;padding:28px 24px 26px;margin-bottom:22px;border:1px solid var(--line)}
+.hero .icon{width:84px;height:84px;border-radius:19px;display:block;box-shadow:0 8px 22px rgba(46,26,16,.18)}
+.eyebrow{font:700 13px/1.2 system-ui,-apple-system,sans-serif;letter-spacing:.08em;text-transform:uppercase;margin:18px 0 8px;color:var(--hero-eyebrow)}
+h1{font:800 clamp(32px,8vw,46px)/1.05 ui-rounded,"SF Pro Rounded",system-ui,-apple-system,sans-serif;margin:0;text-wrap:balance}
+.lede{font-size:19px;line-height:1.45;margin:12px 0 20px;max-width:40ch}
+.store{display:inline-block;line-height:0;border-radius:10px}
+.store img{height:52px;width:auto}
+.store:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.hero .note{display:block;margin-top:14px;font-size:14px;color:var(--muted)}
 .features{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:16px}
 .features li{max-width:none}
 .features strong{display:block}
 .shots{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 12px;margin:22px -8px 0}
-.shots img{flex:0 0 64%;max-width:270px;height:auto;border-radius:18px;scroll-snap-align:center}
+.shots img{flex:0 0 64%;max-width:270px;height:auto;border-radius:18px;scroll-snap-align:center;border:1px solid var(--line)}
 @media (min-width:640px){
   .hero{padding:40px 40px 38px}
   .features{grid-template-columns:1fr 1fr;gap:18px 28px}
-  .shots{overflow:visible;margin-inline:0;padding-inline:0}
-  .shots img{flex:1 1 0;max-width:none;min-width:0}
+  .shots{display:grid;grid-template-columns:repeat(3,1fr);overflow:visible;margin-inline:0;padding-inline:0}
+  .shots img{max-width:none;width:100%}
 }
 nav{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}
 nav a{padding:6px 14px;border-radius:999px;background:var(--accent-soft);color:var(--accent);text-decoration:none;font-weight:600;font-size:14px}
@@ -75,11 +101,16 @@ footer{color:var(--muted);font-size:13px;text-align:center;margin-top:28px}
 
 <div class="wrap">
   <header class="hero">
-    <img class="icon" src="assets/icon-180.png" width="76" height="76" alt="">
+    <img class="icon" src="assets/icon-v22-180.png" width="84" height="84" alt="">
     <p class="eyebrow">iPhone app · No account · No ads</p>
     <h1>TakeMyWeek</h1>
-    <p class="lede">What’s for lunch and dinner this week? TakeMyWeek plans your lunches and dinners in one tap and builds the grocery list that goes with them, sorted by aisle.</p>
-    <a class="store" href="https://apps.apple.com/app/id6815226972">Download on the App Store</a>
+    <p class="lede">What’s on the menu this week? Answer a few questions and TakeMyWeek sets up your week around your needs: lunches and dinners, the grocery list sorted by aisle, and a little cheer when you reach your goals.</p>
+    <a class="store" href="https://apps.apple.com/app/id6815226972">
+      <picture>
+        <source srcset="assets/badge-app-store-white-en-us.svg" media="(prefers-color-scheme: dark)">
+        <img src="assets/badge-app-store-black-en-us.svg" width="156" height="52" alt="Download on the App Store">
+      </picture>
+    </a>
     <span class="note">No ads, no tracking, no account. Your data stays on your iPhone. Only the optional barcode scan needs an internet connection.</span>
   </header>
 
@@ -88,7 +119,7 @@ footer{color:var(--muted);font-size:13px;text-align:center;margin-top:28px}
     <a href="#privacy">Privacy Policy</a>
     <a href="#terms">Terms of Use</a>
     <a href="#support">Support</a>
-    <a href="#fr">Français</a>
+    <a href="fr/" lang="fr" hreflang="fr">Français</a>
   </nav>
 
   <section id="app">
@@ -106,11 +137,13 @@ footer{color:var(--muted);font-size:13px;text-align:center;margin-top:28px}
       <li><strong>10 languages, metric or US units</strong>English, French, Spanish, German, Italian, Portuguese (Brazil), Dutch, Japanese, Korean and Traditional Chinese.</li>
       <li><strong>TakeMyWeek Premium</strong>An auto-renewable subscription, yearly with a free trial or monthly, unlocks generating and changing weeks, every recipe, advanced filters, the pantry and the barcode scan. New installations of version 2.1 may see a welcome offer for 48 hours (see the Terms of Use). Without a subscription you can browse the recipe collections, keep reading your saved week and shopping list, and use Goals and steps.</li>
     </ul>
-    <div class="shots" role="group" aria-label="Screenshots of TakeMyWeek on iPhone">
-      <img src="assets/shot-week-v3.jpg" width="600" height="1304" alt="Lunches and dinners for your whole week: the My week screen with Lunch and Dinner tabs and Monday’s dinner, Dakgalbi, with its time, calories, servings and the Lock and Replace buttons." loading="lazy" decoding="async">
-      <img src="assets/shot-recipe-v3.jpg" width="600" height="1304" alt="Every recipe, your servings and estimated calories: a recipe screen with about 450 kcal per serving and its protein, fat and carbs." loading="lazy" decoding="async">
-      <img src="assets/shot-shopping-v3.jpg" width="600" height="1304" alt="Your shopping list sorted by aisle: 3 of 102 items checked, the barcode scan and pantry links, and the Produce aisle." loading="lazy" decoding="async">
-      <img src="assets/shot-goals-v3.jpg" width="600" height="1304" alt="Goals, weight and diet, steps from Health: the Goals screen with the weight path from 78.4 kg toward 74.0 kg and the steps card." loading="lazy" decoding="async">
+    <div class="shots" role="group" aria-label="Screenshots of TakeMyWeek 2.2 on iPhone">
+      <img src="assets/shot22-en-1.jpg" width="600" height="1304" alt="What matters to you? Four goals checked: Eat more balanced, Save time in the kitchen, Move more every day and Cook for the whole family." loading="lazy" decoding="async">
+      <img src="assets/shot22-en-2.jpg" width="600" height="1304" alt="Your setup: lunch and dinner, 5 days; 4 people; cooking time 30 minutes or less; diet Balanced, chosen for you; no allergen left out; all recipe collections; daily step goal 8,000." loading="lazy" decoding="async">
+      <img src="assets/shot22-en-3.jpg" width="600" height="1304" alt="My week with the message “Well done! Your setup is ready. Enjoy your week!”, the week’s preferences and an average of about 410 kcal per meal." loading="lazy" decoding="async">
+      <img src="assets/shot22-en-4.jpg" width="600" height="1304" alt="A recipe, 15-Minute Dumpling Soup: about 250 kcal per serving with its protein, fat and carbs, then the ingredients." loading="lazy" decoding="async">
+      <img src="assets/shot22-en-5.jpg" width="600" height="1304" alt="Shopping list: 3 of 73 items checked, the barcode scan and pantry links, and the Produce aisle." loading="lazy" decoding="async">
+      <img src="assets/shot22-en-6.jpg" width="600" height="1304" alt="Goals: 9,200 steps entered today for a goal of 8,000, with the message “Well done! Goal reached with 9,200 steps today. Nicely done!”" loading="lazy" decoding="async">
     </div>
   </section>
 
@@ -223,84 +256,10 @@ footer{color:var(--muted);font-size:13px;text-align:center;margin-top:28px}
 
   <section id="fr" lang="fr">
     <h2>En français</h2>
-    <p class="date">App iPhone · Sans compte · Sans publicité</p>
-    <p><strong>Qu’est-ce qu’on mange cette semaine, à midi et le soir ?</strong> TakeMyWeek prépare vos déjeuners et vos dîners en un geste et la liste de courses qui va avec, classée par rayon.</p>
-    <p><a href="https://apps.apple.com/app/id6815226972">Télécharger dans l’App Store</a></p>
-    <p>Sans publicité, sans suivi, sans compte. Vos données restent sur votre iPhone. Seul le scan de codes-barres, facultatif, demande une connexion internet.</p>
-
-    <h3>Ce que fait l’app</h3>
-    <ul>
-      <li><strong>Réglée selon vos besoins (version 2.2).</strong> Dites à TakeMyWeek ce qui compte pour vous : manger plus équilibré, gagner du temps, plus de protéines, cuisiner pour la famille, bouger plus ou perdre du poids en douceur. Quelques questions, et vos repas, votre régime, votre temps de cuisine et vos objectifs sont réglés pour vous, avec un court récapitulatif des choix faits. Tout se modifie à tout moment dans Réglages › Mes besoins et objectifs.</li>
-      <li><strong>Félicitations et encouragements (version 2.2).</strong> Un court message quand vous préparez une semaine, terminez vos courses ou atteignez votre objectif de pas, et une carte discrète dans Objectifs. Uniquement dans l’app, sans notification.</li>
-      <li><strong>Déjeuners et dîners en un geste.</strong> Planifiez 5 ou 7 jours, les dîners seuls ou les déjeuners et les dîners. Verrouillez les repas qui vous plaisent, renouvelez les autres ou remplacez un seul repas.</li>
-      <li><strong>Une liste de courses classée par rayon.</strong> Les quantités sont additionnées pour vos portions et arrondies à l’unité. Déduisez ce que vous avez déjà dans votre placard.</li>
-      <li><strong>Plus de 1 000 recettes en 10 rubriques (version 2.1).</strong> Classiques, française, chinoise, coréenne, antillaise, africaine, repas de la flemme, léger et protéiné, et deux nouvelles rubriques : Bas en calories (moins de 400 kcal par portion, valeurs estimées) et Réunionnaise. Chaque recette affiche les calories, protéines, lipides et glucides estimés par portion.</li>
-      <li><strong>Vos filtres, respectés.</strong> Portions, temps maximal, dix régimes, ingrédients et allergènes exclus. L’app ne les assouplit jamais d’elle-même.</li>
-      <li><strong>Objectifs (version 2.1, gratuit).</strong> Pour les adultes : notez votre poids, fixez un poids cible et obtenez un objectif calorique quotidien estimé, avec des garde-fous, puis choisissez l’un des dix régimes pour vos prochains repas. Ce sont des estimations, pas un avis médical.</li>
-      <li><strong>Pas depuis Santé (version 2.1, facultatif).</strong> En lecture seule : l’app lit votre nombre de pas pour l’afficher à côté de vos objectifs. Elle n’écrit jamais dans Santé et vos pas ne quittent pas votre iPhone. Vous pouvez aussi saisir vos pas à la main.</li>
-      <li><strong>Scan de codes-barres (version 2.1, Premium).</strong> Scannez ou saisissez un code-barres pour voir les valeurs nutritionnelles pour 100 g d’un produit, tirées de la base ouverte Open Food Facts, puis cochez-le dans vos courses ou ajoutez-le à votre placard. Seul le code-barres est envoyé.</li>
-      <li><strong>10 langues, unités métriques ou américaines.</strong></li>
-      <li><strong>TakeMyWeek Premium.</strong> Abonnement à renouvellement automatique, annuel avec essai gratuit ou mensuel. Il débloque la création et la modification des semaines, toutes les recettes, les filtres avancés, le placard et le scan. Les nouvelles installations de la version 2.1 peuvent voir une offre de bienvenue pendant 48 heures (voir les conditions d’utilisation). Sans abonnement, vous pouvez parcourir les rubriques, relire votre semaine et vos courses enregistrées, et utiliser les Objectifs et les pas.</li>
-    </ul>
-
-    <h3>Politique de confidentialité</h3>
-    <p class="date">En vigueur le 16 octobre 2026 · s’applique à TakeMyWeek (anciennement Dinner Ideas, CookCart et Weekbite) pour iPhone, version 1.0 et suivantes.</p>
-    <p>TakeMyWeek ne collecte, ne stocke sur un serveur, ne partage ni ne vend aucune donnée personnelle. Pas de compte, de publicité, d’analyse ni de traceur ; nous ne recevons aucune de vos données.</p>
-    <p><strong>Ce qui reste sur votre iPhone.</strong> Votre planning, vos préférences (nombre de jours, repas par jour, portions, temps maximal, régime, ingrédients et allergènes exclus), votre placard, vos favoris et vos coches de courses sont enregistrés dans un fichier de l’app sur votre appareil. Depuis la version 2.1, ce fichier contient aussi vos Objectifs : le profil que vous saisissez (âge, taille, sexe utilisé par la formule de calcul, niveau d’activité, rythme), votre journal de poids et votre poids cible, votre régime et les pas saisis à la main. Depuis la version 2.2, il contient aussi vos réponses aux questions « Mes besoins » : vos objectifs, votre foyer, vos repas, votre choix de régime, vos allergènes, votre temps de cuisine, vos rubriques de recettes et votre objectif de pas. Les derniers produits scannés sont gardés dans un cache local séparé (200 produits au plus, pendant 30 jours). Rien de tout cela ne quitte votre iPhone, sauf si vous choisissez de le partager ou de l’exporter.</p>
-    <p><strong>Félicitations et encouragements (version 2.2 et suivantes).</strong> Les messages sont choisis sur votre iPhone à partir des données ci-dessus, par exemple vos pas ou votre semaine enregistrée ; rien n’est envoyé. Ils s’affichent uniquement dans l’app, jamais en notification. Un petit fichier séparé de l’app retient seulement les félicitations déjà affichées et si l’invitation « Mes besoins » a été vue, pour ne rien répéter. Il ne contient rien d’autre, est exclu des sauvegardes iCloud et de l’appareil, ne figure jamais dans les exports et est effacé par Réglages › Réinitialiser les données. Les félicitations liées au poids n’apparaissent qu’avec un profil adulte, au-dessus du seuil de poids de santé et à un rythme doux ; aucun message ne félicite de manger moins.</p>
-    <p><strong>Santé (version 2.1 et suivantes).</strong> Si vous touchez Connecter à Santé et l’autorisez, TakeMyWeek lit <strong>uniquement votre nombre de pas</strong> dans l’app Santé, <strong>en lecture seule</strong> : elle n’y écrit jamais rien. Les pas lus servent à afficher votre total du jour et votre objectif de pas ; ils restent sur votre iPhone, ne sont pas enregistrés dans le fichier de l’app, ne figurent pas dans les exports et ne sont jamais envoyés, ni à nous ni à personne. Les données de Santé ne servent jamais à la publicité ni au marketing. Vous pouvez retirer l’accès à tout moment dans Réglages › Confidentialité et sécurité › Santé › TakeMyWeek, ou depuis l’app Santé. Sans Santé, vous pouvez saisir vos pas à la main.</p>
-    <p><strong>Scan de codes-barres et Open Food Facts (version 2.1 et suivantes).</strong> Le scan est une fonction Premium facultative ; c’est la seule fonction de TakeMyWeek qui se connecte à un service autre qu’Apple. Quand vous scannez ou saisissez un code-barres, l’app envoie <strong>uniquement ce code-barres</strong> à la base Open Food Facts (world.openfoodfacts.org), en HTTPS, pour obtenir le nom, la marque, la quantité et les valeurs nutritionnelles du produit. La requête ne contient ni compte, ni cookie, ni identifiant ; comme toute requête internet, elle révèle l’adresse IP de votre appareil, et elle indique le nom et la version de l’app. Votre planning, vos préférences, vos objectifs, votre poids et vos données de Santé ne sont jamais envoyés. L’image de la caméra sert uniquement, sur votre iPhone, à lire le code-barres ; elle n’est ni enregistrée ni envoyée. La politique de confidentialité d’Open Food Facts s’applique au traitement de ses requêtes. Les données produit viennent des contributeurs d’Open Food Facts et sont disponibles sous licence Open Database License (ODbL).</p>
-    <p><strong>Quand des données quittent votre appareil, c’est parce que vous l’avez demandé.</strong></p>
-    <ul>
-      <li><strong>Partage et export :</strong> quand vous partagez votre planning ou vos courses, ou exportez une sauvegarde, iOS transmet le contenu à l’app ou à l’endroit que vous choisissez. Une sauvegarde JSON contient votre planning, vos préférences, vos favoris, votre placard, depuis la version 2.1 votre profil d’Objectifs, votre régime, votre journal de poids et vos pas saisis à la main, et depuis la version 2.2 vos réponses « Mes besoins » ; jamais les pas lus dans Santé. Les sauvegardes ne sont pas chiffrées par TakeMyWeek : rangez-les en lieu sûr.</li>
-      <li><strong>Sauvegardes iCloud ou de l’appareil :</strong> comme les autres données d’app, le fichier peut être inclus dans les sauvegardes de votre iPhone selon les réglages de votre compte Apple.</li>
-      <li><strong>Scan de codes-barres :</strong> uniquement le code-barres, comme indiqué ci-dessus.</li>
-      <li><strong>Liens :</strong> un lien touché dans l’app s’ouvre dans votre navigateur ou l’App Store, où la politique de confidentialité du site s’applique.</li>
-    </ul>
-    <p><strong>Achats et abonnements.</strong> TakeMyWeek Premium s’achète dans l’App Store d’Apple. Apple traite le paiement et gère l’abonnement selon sa propre politique de confidentialité. Nous ne recevons jamais votre nom, votre compte Apple ni vos données de paiement. L’app demande seulement au système d’achat d’Apple, sur votre iPhone, si un abonnement est actif. Pour l’offre de bienvenue (version 2.1), l’app enregistre dans le trousseau de votre iPhone l’heure de sa première ouverture et si l’offre s’applique à cette installation. Cet élément reste sur cet appareil, n’est pas synchronisé avec iCloud et n’est jamais envoyé ; il peut subsister après la suppression de l’app, afin qu’une réinstallation ne relance pas le délai de 48 heures.</p>
-    <p><strong>Réseau.</strong> Le catalogue de recettes est intégré à l’app, et l’app ne nous envoie rien. Elle contacte l’App Store pour afficher les offres d’abonnement et vérifier ou restaurer un achat, et, seulement quand vous utilisez le scan, Open Food Facts comme décrit ci-dessus. Tout le reste fonctionne hors connexion.</p>
-    <p><strong>Enfants.</strong> TakeMyWeek ne collecte aucune information, auprès de personne, enfants compris. Les Objectifs (poids et objectif calorique) sont réservés aux adultes de 18 ans et plus ; l’app refuse un profil de moins de 18 ans.</p>
-    <p><strong>Informations de santé.</strong> Les calories, les macronutriments, les régimes, l’objectif calorique et l’objectif de pas sont des estimations et des informations générales, pas un avis médical ou diététique. L’objectif calorique repose sur une formule publiée, avec des garde-fous (apport minimal quotidien, rythme doux ou modéré, aucune prise de poids visée) ; il ne peut pas prédire vos résultats. Si vous êtes enceinte ou allaitez, avez une maladie, ou avez ou avez eu un trouble du comportement alimentaire, parlez-en à un professionnel de santé avant de changer d’alimentation ; si vous l’indiquez dans votre profil, l’app ne calcule pas de déficit calorique. Les filtres de régime et d’allergènes reposent sur les ingrédients de notre catalogue : vérifiez toujours les emballages (allergènes, contaminations croisées).</p>
-    <p><strong>Suppression.</strong> Les données restent sur votre iPhone jusqu’à ce que vous les remplaciez ou supprimiez l’app. Réglages › Réinitialiser les données efface les données actives (planning, préférences, favoris, placard, coches de courses, Objectifs, réponses « Mes besoins », liste des félicitations déjà affichées et cache des produits scannés), mais conserve une copie de récupération sur l’appareil ; supprimez l’app (plutôt que de la décharger) pour effacer tout ce qu’elle a enregistré. L’élément de l’offre de bienvenue peut rester dans le trousseau, comme expliqué plus haut. Vos pas restent dans l’app Santé, que vous contrôlez. Les fichiers de sauvegarde exportés se suppriment séparément. Comme nous ne détenons rien sur aucun serveur, il n’y a rien à nous demander.</p>
-    <p><strong>Modifications.</strong> Si cette politique change, la nouvelle version sera publiée sur cette page avec sa date d’effet. Version en vigueur : 16 octobre 2026.</p>
-
-    <h3>Conditions d’utilisation</h3>
-    <p class="date">En vigueur le 14 octobre 2026</p>
-    <p>TakeMyWeek est concédée sous le <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">contrat de licence standard d’Apple</a>.</p>
-    <p><strong>TakeMyWeek Premium.</strong> Abonnement à renouvellement automatique, annuel (avec essai gratuit pour les nouveaux abonnés, quand il est proposé) ou mensuel. Les prix sont affichés dans l’app avant l’achat et dépendent de votre pays. Le paiement est prélevé sur votre compte Apple à la confirmation de l’achat ; l’abonnement se renouvelle automatiquement, sauf résiliation au moins 24 heures avant la fin de la période en cours. Vous pouvez le gérer ou le résilier à tout moment dans les réglages de votre compte App Store ; supprimer l’app ne résilie pas l’abonnement.</p>
-    <p><strong>Offre de bienvenue (version 2.1).</strong> Sur une nouvelle installation de la version 2.1, l’onglet Objectifs peut proposer une offre de bienvenue pendant les 48 heures qui suivent la première ouverture de l’app sur cet iPhone. Elle n’apparaît pas sur un iPhone qui contenait déjà des données de l’app, et disparaît à la fin des 48 heures ou si vous êtes déjà abonné. Il s’agit d’un abonnement annuel dont la première année est payée d’avance, en une seule fois, à un prix de lancement réduit ; il se renouvelle ensuite au prix annuel habituel affiché avant l’achat, sauf résiliation au moins 24 heures avant la fin de la première année. Apple décide de l’éligibilité : une offre de lancement ne peut servir qu’une fois par groupe d’abonnements ; elle peut donc être indisponible si vous avez déjà profité d’un essai gratuit ou d’une autre offre de lancement de TakeMyWeek Premium.</p>
-    <p><strong>Recettes et nutrition.</strong> Les durées, les calories et les macronutriments sont des estimations calculées à partir des ingrédients ; ce n’est pas un avis médical ou diététique. Les recettes n’ont pas toutes été testées en cuisine. Les photos des recettes sont des illustrations. Vérifiez toujours les allergènes sur les emballages.</p>
-    <p><strong>Objectifs, pas et données produit.</strong> Les objectifs, l’objectif calorique et l’objectif de pas sont des estimations générales destinées aux adultes ; ils ne remplacent pas l’avis d’un professionnel de santé. Les informations produit du scan viennent de la base ouverte et collaborative Open Food Facts (ODbL) ; elles peuvent être incomplètes ou dépassées : vérifiez l’emballage.</p>
-
-    <h3>Assistance</h3>
-    <p>Nous lisons chaque message et répondons généralement en quelques jours : balustreyonni@gmail.com.</p>
-    <dl>
-      <dt>Comment modifier mes besoins et objectifs ?</dt>
-      <dd>Allez dans Réglages › Mes besoins et objectifs : les questions s’ouvrent préremplies avec vos réponses et réglages actuels. L’enregistrement met à jour vos réglages et objectifs ; votre semaine enregistrée reste telle quelle jusqu’à ce que vous en prépariez une nouvelle. Changer le nombre de portions fait partie de Premium, comme dans les préférences de la semaine.</dd>
-      <dt>Les félicitations envoient-elles des notifications ?</dt>
-      <dd>Non. Elles s’affichent uniquement dans l’app, quelques secondes ou jusqu’à ce que vous les touchiez, et chacune une seule fois.</dd>
-      <dt>« Pas assez de recettes compatibles » : pourquoi ?</dt>
-      <dd>Vos filtres (temps maximal, régime, ingrédients ou allergènes exclus) laissent moins de recettes que de repas dans votre semaine. L’app indique s’il manque des déjeuners ou des dîners et n’assouplit jamais vos filtres d’elle-même : augmentez le temps maximal, passez à 5 jours, planifiez seulement les dîners ou retirez une exclusion. Quand elle règle tout selon vos besoins, elle n’ajuste que ce qu’elle a choisi pour vous (par exemple le régime ou le temps de cuisine) et le dit dans le récapitulatif ; vos allergènes, un régime que vous avez choisi et vos rubriques ne sont jamais modifiés.</dd>
-      <dt>Comment planifier les déjeuners en plus des dîners ?</dt>
-      <dd>Dans les préférences de la semaine, choisissez déjeuners et dîners. La semaine a alors un onglet Déjeuner et un onglet Dîner ; les repas verrouillés restent en place quand vous générez de nouveau.</dd>
-      <dt>Comment fonctionnent les Objectifs ?</dt>
-      <dd>Ouvrez l’onglet Objectifs, saisissez votre profil (adultes seulement), votre poids actuel, votre poids cible et votre rythme. L’app estime un objectif calorique quotidien avec des garde-fous et vous laisse choisir l’un des dix régimes pour vos prochains repas. Votre semaine en cours reste telle quelle jusqu’à la prochaine génération.</dd>
-      <dt>Comment connecter ou déconnecter mes pas ?</dt>
-      <dd>Dans Objectifs, touchez Connecter à Santé et autorisez la lecture du nombre de pas. Pour arrêter : Réglages › Confidentialité et sécurité › Santé › TakeMyWeek, ou l’app Santé. Sans données ou sans accès, vous pouvez saisir vos pas à la main.</dd>
-      <dt>Le scan ne trouve pas mon produit.</dt>
-      <dd>Le scan demande une connexion internet et un abonnement TakeMyWeek Premium. Si un produit n’est pas dans Open Food Facts, vérifiez le code-barres ou essayez un autre produit ; vous pouvez aussi saisir les chiffres du code.</dd>
-      <dt>Je ne vois pas l’offre de bienvenue.</dt>
-      <dd>Elle apparaît dans l’onglet Objectifs seulement sur une nouvelle installation de la version 2.1, pendant les 48 heures qui suivent la première ouverture, si Apple confirme que votre compte y a droit et que vous n’êtes pas déjà abonné.</dd>
-      <dt>Comment gérer, résilier ou restaurer mon abonnement ?</dt>
-      <dd>Gérez-le ou résiliez-le dans l’app Réglages de votre iPhone : touchez votre nom, puis Abonnements. Sur un nouvel appareil, ouvrez TakeMyWeek, allez dans Réglages › Abonnement et touchez Restaurer les achats.</dd>
-      <dt>Que puis-je faire sans abonnement ?</dt>
-      <dd>Parcourir les rubriques, relire votre semaine enregistrée, ses recettes et vos courses, et utiliser les Objectifs et les pas. Créer ou modifier une semaine, ouvrir les autres recettes, les filtres avancés, le placard et le scan font partie de Premium.</dd>
-      <dt>Comment transférer mes données sur un nouvel iPhone ?</dt>
-      <dd>Réglages › Exporter une sauvegarde JSON crée un fichier ; ouvrez-le avec Réglages › Importer une sauvegarde JSON sur le nouvel appareil. Les pas de Santé ne sont pas dans la sauvegarde : reconnectez Santé sur le nouvel iPhone.</dd>
-    </dl>
+    <p>Présentation, politique de confidentialité, conditions d’utilisation et assistance : <a href="fr/" hreflang="fr">version française du site</a>. Accès direct à la <a href="fr/#confidentialite" hreflang="fr">politique de confidentialité</a>.</p>
   </section>
 
-  <footer>© 2026 Yonni Balustre · TakeMyWeek</footer>
+  <footer>© 2026 Yonni Balustre · TakeMyWeek · <a href="fr/" lang="fr" hreflang="fr">Version française</a></footer>
 </div>
 
 <script>
